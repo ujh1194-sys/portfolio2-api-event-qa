@@ -1,0 +1,80 @@
+$kind: http-request
+url: https://dummyjson.com/carts/1
+method: GET
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status code is 200\", function () {\r
+
+      \    // 정상 조회 요청이므로 HTTP 상태코드가 200인지 확인한다.\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      // 응답 JSON을 JavaScript 객체로 변환한다.\r
+
+      const jsonData = pm.response.json();\r
+
+      \r
+
+      pm.test(\"Response has id\", function () {\r
+
+      \    // 응답에 id 필드가 존재하는지 확인한다.\r
+
+      \    pm.expect(jsonData).to.have.property(\"id\");\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Response has products\", function () {\r
+
+      \    // 응답에 products 필드가 존재하는지 확인한다.\r
+
+      \    pm.expect(jsonData).to.have.property(\"products\");\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Response has userId\", function () {\r
+
+      \    // 응답에 userId 필드가 존재하는지 확인한다.\r
+
+      \    pm.expect(jsonData).to.have.property(\"userId\");\r
+
+      });\r
+
+      \r
+
+      pm.test(\"id is a number\", function () {\r
+
+      \    // id가 숫자 타입인지 확인한다.\r
+
+      \    pm.expect(jsonData.id).to.be.a(\"number\");\r
+
+      });\r
+
+      \r
+
+      pm.test(\"products is an array\", function () {\r
+
+      \    // products가 여러 상품을 담는 배열인지 확인한다.\r
+
+      \    pm.expect(jsonData.products).to.be.an(\"array\");\r
+
+      });\r
+
+      \r
+
+      pm.test(\"userId is a number\", function () {\r
+
+      \    // userId가 숫자 타입인지 확인한다.\r
+
+      \    pm.expect(jsonData.userId).to.be.a(\"number\");\r
+
+      });"
+    language: text/javascript
+order: 1790844306677

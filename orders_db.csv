@@ -1,0 +1,11 @@
+﻿order_id,customer_id,status,amount,payment_method,updated_at
+ORD-201,CUST-001,completed,42000,card,2026-09-28T09:12:00
+ORD-202,CUST-002,pending,18500,kakao_pay,2026-09-28T09:35:00
+ORD-203,CUST-003,completed,73000,card,2026-09-28T10:05:00
+ORD-204,CUST-004,cancelled,26000,bank_transfer,2026-09-28T10:40:00
+ORD-205,CUST-005,completed,51000,card,2026-09-28T11:15:00
+ORD-206,CUST-006,completed,99000,kakao_pay,2026-09-28T11:55:00
+ORD-207,CUST-007,pending,31500,card,2026-09-28T12:20:00
+ORD-208,CUST-008,completed,64000,bank_transfer,2026-09-28T13:10:00
+ORD-209,CUST-009,cancelled,22000,card,2026-09-28T14:05:00
+ORD-210,CUST-010,completed,87000,kakao_pay,2026-09-28T14:40:00

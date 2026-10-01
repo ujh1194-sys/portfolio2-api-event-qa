@@ -1,0 +1,16 @@
+test_id,검증 항목,expected,actual,result
+TC-01,event_id 중복 검사,event_id는 고유해야 함,EVT-1011이 2개 행에서 중복 발견됨,FAIL
+TC-02,선행 order_created 존재 여부,payment_completed가 있으면 같은 주문의 order_created가 존재해야 함,ORD-208에서 order_created 없이 payment_completed가 발견됨,FAIL
+TC-03,취소 주문 이벤트 흐름,취소된 주문에는 payment_completed가 발생하지 않아야 함,ORD-209에서 payment_completed가 발견됨,FAIL
+TC-04,completed 주문 결제 이벤트,completed 주문에는 payment_completed가 존재해야 함,누락된 completed 주문이 없음,PASS
+TC-05,DB와 Event 상태 일관성,DB가 pending인 주문의 Event status도 pending이어야 함,ORD-207은 DB가 pending이지만 Event는 completed임,FAIL
+TC-06,event_id NULL 검사,event_id는 NULL이면 안 됨,NULL 행이 없음,PASS
+TC-07,order_id NULL 검사,order_id는 NULL이면 안 됨,NULL 행이 없음,PASS
+TC-08,event_name NULL 검사,event_name은 NULL이면 안 됨,NULL 행이 없음,PASS
+TC-09,event_time NULL 검사,event_time은 NULL이면 안 됨,NULL 행이 없음,PASS
+TC-10,event_name 허용값 검사,event_name은 정의된 허용값 중 하나여야 함,허용값 위반 행이 없음,PASS
+TC-11,GET Cart 1 상태코드 검사,정상 조회 요청은 HTTP 200을 반환해야 함,200 OK 반환,PASS
+TC-12,GET Cart 1 필수 필드 검사,응답에 id products userId 필드가 존재해야 함,id products userId 필드 모두 존재,PASS
+TC-13,GET Cart 1 id 타입 검사,id는 number 타입이어야 함,id가 number 타입으로 반환됨,PASS
+TC-14,GET Cart 1 products 타입 검사,products는 array 타입이어야 함,products가 array 타입으로 반환됨,PASS
+TC-15,GET Cart 1 userId 타입 검사,userId는 number 타입이어야 함,userId가 number 타입으로 반환됨,PASS

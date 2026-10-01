@@ -1,0 +1,5 @@
+bug_id,summary,expected,actual,severity,priority,status
+BUG-01,event_id 중복 발생,event_id는 이벤트마다 고유해야 함,EVT-1011이 2개 행에서 중복 발견됨,높음,높음,Open
+BUG-02,order_created 이벤트 누락,payment_completed 이전에 같은 주문의 order_created가 존재해야 함,ORD-208에서 order_created 없이 payment_completed가 발견됨,높음,높음,Open
+BUG-03,취소 주문에 payment_completed 발생,취소된 주문에는 payment_completed가 발생하지 않아야 함,ORD-209에서 payment_completed가 발견됨,높음,높음,Open
+BUG-04,DB와 Event 주문 상태 불일치,DB와 Event의 주문 상태가 일치해야 함,ORD-207은 DB가 pending이지만 Event는 completed임,높음,높음,Open
